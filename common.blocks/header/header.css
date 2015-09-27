@@ -1,0 +1,14 @@
+.header {
+    line-height: 50px;
+    color: #16b1d4;
+    background: #006191;
+}
+
+.header .section__inner {
+    padding-left: 78px;
+    background: url(header.png) no-repeat 32px 50%;
+}
+
+.header .social {
+    float: right;
+}

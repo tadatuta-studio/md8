@@ -1,488 +1,287 @@
 module.exports = {
-    block : 'page',
-    title : 'Title of the page',
-    favicon : '/favicon.ico',
-    head : [
-        { elem : 'meta', attrs : { name : 'description', content : '' } },
-        { elem : 'meta', attrs : { name : 'viewport', content : 'width=device-width, initial-scale=1' } },
-        { elem : 'css', url : 'index.min.css' }
+    block: 'page',
+    title: 'Мэджик Десктоп — программа для умственного развития детей',
+    favicon: '/favicon.ico',
+    head: [
+        { elem: 'meta', attrs: { name: 'description', content: '' } },
+        { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width, initial-scale=1' } },
+        { elem: 'css', url: 'index.min.css' }
     ],
-    scripts: [{ elem : 'js', url : 'index.min.js' }],
-    mods : { theme : 'islands' },
-    content : [
+    scripts: [{ elem: 'js', url: 'index.min.js' }],
+    content: [
         {
-            block : 'header',
-            content : [
-                'header content goes here'
+            block: 'section',
+            mix: { block: 'header' },
+            content: [
+                {
+                    block: 'social',
+                    content: ['fb', 'vk', 'ok'].map(function(network) {
+                        return {
+                            block: 'link',
+                            url: '#' + network,
+                            mix: {
+                                block: 'social',
+                                elem: 'item',
+                                elemMods: {
+                                    network: network
+                                }
+                            }
+                        };
+                    })
+                },
+                'Мэджик Десктоп — программа для умственного развития детей',
             ]
         },
         {
-            block : 'content',
-            content : [
+            block: 'content',
+            content: [
                 {
-                    tag : 'p',
-                    content : [
-                        'This is a demo page to show blocks from bem-components library. ',
-                        { tag : 'br' },
-                        'Feel free to replace it with your own content in desktop.bundles/index/index.bemjson.js.',
-                        { tag : 'br' },
-                        'For more info about BEM check out ',
+                    block: 'section',
+                    mix: { block: 'introduction' },
+                    content: [
                         {
-                            block : 'link',
-                            url : 'http://bem.info/',
-                            content : 'bem.info'
-                        },
-                        '.'
-                    ]
-                },
-                { tag : 'h2', content : 'islands theme' },
-
-                {
-                    block : 'table',
-                    tag : 'table',
-                    attrs : { style : 'table-layout: fixed; width: 600px' },
-                    content : [
-                        {
-                            elem : 'row',
-                            tag : 'tr',
-                            content : [
-                                { elem : 'title', tag : 'th', content : 'size s' },
-                                { elem : 'title', tag : 'th', content : 'size m' },
-                                { elem : 'title', tag : 'th', content : 'size l' },
-                                { elem : 'title', tag : 'th', content : 'size xl' }
+                            block: 'introduction',
+                            elem: 'slogan',
+                            content: [
+                                'Все для умственного развития детей ',
+                                {
+                                    elem: 'em',
+                                    content: 'от 2 до 12 лет'
+                                },
+                                '<br>собрано в одном месте — в Мэджик Десктоп'
                             ]
                         },
                         {
-                            elem : 'row',
-                            tag : 'tr',
-                            content : [
-                                { elem : 'cell', tag : 'td', size : 's' },
-                                { elem : 'cell', tag : 'td', size : 'm' },
-                                { elem : 'cell', tag : 'td', size : 'l' },
-                                { elem : 'cell', tag : 'td', size : 'xl' }
-                            ].map(function(cell) {
-                                cell.attrs = { style : 'width: 25%; vertical-align: top;' };
-                                cell.content = [
-                                    {
-                                        block : 'menu',
-                                        mods : { theme : 'islands', size : cell.size },
-                                        attrs : { style : 'border: 1px solid rgba(0, 0, 0, 0.1);' },
-                                        content : [
-                                            {
-                                                block : 'menu-item',
-                                                content : 'New'
-                                            },
-                                            {
-                                                block : 'menu-item',
-                                                mods : { disabled : true },
-                                                content : 'Open Recent'
-                                            },
-                                            {
-                                                elem : 'group',
-                                                title : 'Save',
-                                                content : [
-                                                    {
-                                                        block : 'menu-item',
-                                                        content : 'Save as...'
-                                                    },
-                                                    {
-                                                        block : 'menu-item',
-                                                        content : 'Export'
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                block : 'menu-item',
-                                                content : 'Close'
-                                            }
-                                        ]
-                                    },
-                                    { tag : 'br' },
-                                    {
-                                        block : 'menu',
-                                        mods : { mode : 'check', theme : 'islands', size : cell.size },
-                                        attrs : { style : 'border: 1px solid rgba(0, 0, 0, 0.1);' },
-                                        content : [
-                                            {
-                                                elem : 'group',
-                                                title : 'Automate',
-                                                content : [
-                                                    {
-                                                        block : 'menu-item',
-                                                        content : 'Batch'
-                                                    },
-                                                    {
-                                                        block : 'menu-item',
-                                                        content : 'Create Droplet'
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                elem : 'group',
-                                                content : [
-                                                    {
-                                                        block : 'menu-item',
-                                                        mods : { checked : true },
-                                                        content : [
-                                                            { block : 'icon', mods : { social : 'twitter' } },
-                                                            'Twitter'
-                                                        ]
-                                                    },
-                                                    {
-                                                        block : 'menu-item',
-                                                        content : [
-                                                            { block : 'icon', mods : { social : 'vk' } },
-                                                            'VK'
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ];
-                                return cell;
-                            })
+                            block: 'video'
+                        },
+                        {
+                            block: 'button',
+                            text: 'Скачать программу'
                         }
                     ]
                 },
-
-                { tag : 'br' },
-
                 {
-                    block : 'line',
-                    mods : { size : 's' },
-                    content : [
-                        'size s (24px height) ',
+                    block: 'section',
+                    mix: { block: 'possibilities' },
+                    content: [
                         {
-                            block : 'input',
-                            mods : { theme : 'islands', size : 's', 'has-clear' : true },
-                            val : 'value',
-                            placeholder : 'placeholder'
+                            block: 'possibilities',
+                            elem: 'heading',
+                            mix: { block: 'section', elem: 'heading' },
+                            content: 'Занимаясь в Мэджик Десктоп Ваш ребенок будет уметь:'
                         },
-                        ' ',
                         {
-                            block : 'button',
-                            mods : { theme : 'islands', size : 's' },
-                            text : 'button'
-                        },
-                        ' ',
-                        {
-                            block : 'button',
-                            mods : { theme : 'islands', size : 's' },
-                            text : 'button',
-                            icon : { block : 'icon', mods : { action : 'download' } }
-                        },
-                        ' ',
-                        {
-                            block : 'button',
-                            mods : { theme : 'islands', size : 's' },
-                            icon : { block : 'spin', mods : { theme : 'islands', size : 'xs', visible : true } },
-                            text : 'Loading...'
-                        },
-                        ' ',
-                        {
-                            block : 'radio-group',
-                            mods : { theme : 'islands', size : 's', type : 'button' },
-                            name : 'radio-sizes-s',
-                            options : [
-                                { val : 1, text : 'first' },
-                                { val : 2, text : 'second', checked : true }
+                            block: 'tabbed-pane',
+                            content: [
+                                {
+                                    elem: 'tabs',
+                                    content: [
+                                        {
+                                            elem: 'tab',
+                                            content: 'К 4 годам'
+                                        },
+                                        {
+                                            elem: 'tab',
+                                            content: 'К 7-8 годам'
+                                        },
+                                        {
+                                            elem: 'tab',
+                                            content: 'К 11-12 годам'
+                                        }
+                                    ]
+                                },
+                                {
+                                    elem: 'panes',
+                                    content: [
+                                        {
+                                            elem: 'pane',
+                                            content: [
+                                                {
+                                                    block: 'list',
+                                                    content: [
+                                                        'Самостоятельно пользоваться компьютером: включать, выключать, и спользовать мышь и клавиатуру',
+                                                        'Называть основные цвета',
+                                                        'Различать геометрические фигуры',
+                                                        'Запоминать и воспроизводить по порядку 3-4 предметов',
+                                                        'Может обобщать предметы по известным свойствам. (найти все красные)',
+                                                        'Может находить отличия предметов. (сравнивать две картинки)',
+                                                        'Считать до 10',
+                                                        'Сравнивать количество: больше или меньше',
+                                                        'Читать буквы, слога и правильно произносить составленные из них слова.',
+                                                        'Понимать положение предметов относительно себя. (право, лево, в, на, под, за, между, перед, возле и т. д.)',
+                                                        'Рисовать геометрические фигуры: круги, квадраты',
+                                                        'Обводить и раскрашивать рисунки.',
+                                                        'Перерисовывать картинки. ',
+                                                        'Собирать простые пазлы. 4 элемента. ',
+                                                        'Собирать простые фигуры из элиментов.',
+                                                        'Получит представление об окружающем мире в соответствии с возрастными интересами.'
+                                                    ].map(function(item) {
+                                                        return {
+                                                            elem: 'item',
+                                                            content: item
+                                                        };
+                                                    })
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
                             ]
-                        },
-                        ' ',
-                        {
-                            block : 'checkbox',
-                            mods : { theme : 'islands', size : 's', type : 'button' },
-                            val : 1,
-                            text : 'check'
-                        },
-                        ' ',
-                        {
-                            block : 'dropdown',
-                            mods : { switcher : 'button', theme : 'islands', size : 's' },
-                            switcher : 'dropdown',
-                            popup : { block : 'popup', mods : { theme : 'islands' }, content : 'popup' }
-                        },
-                        ' ',
-                        {
-                            block : 'select',
-                            mods : { mode : 'radio-check', theme : 'islands', size : 's' },
-                            name : 'select',
-                            text : 'first',
-                            options : [
-                                { val : 1, text : 'first', checked: true },
-                                { val : 2, text : 'second' }
-                            ]
-                        },
-                        ' ',
-                        {
-                            block : 'spin',
-                            mods : { theme : 'islands', size : 's', visible : true }
                         }
                     ]
                 },
-
-                { tag : 'br' },
-
                 {
-                    block : 'line',
-                    mods : { size : 'm' },
-                    content : [
-                        'size m (28px height) ',
+                    block: 'section',
+                    mix: { block: 'features' },
+                    content: [
                         {
-                            block : 'input',
-                            mods : { theme : 'islands', size : 'm', 'has-clear' : true },
-                            val : 'value',
-                            placeholder : 'placeholder'
+                            block: 'features',
+                            elem: 'heading',
+                            mix: { block: 'section', elem: 'heading' },
+                            content: 'Супер способности Мэджик Десктоп:'
                         },
-                        ' ',
                         {
-                            block : 'button',
-                            mods : { theme : 'islands', size : 'm' },
-                            text : 'button'
-                        },
-                        ' ',
-                        {
-                            block : 'button',
-                            mods : { theme : 'islands', size : 'm' },
-                            text : 'button',
-                            icon : { block : 'icon', mods : { action : 'download' } }
-                        },
-                        ' ',
-                        {
-                            block : 'button',
-                            mods : { theme : 'islands', size : 'm' },
-                            icon : { block : 'spin', mods : { theme : 'islands', size : 's', visible : true } },
-                            text : 'Loading...'
-                        },
-                        ' ',
-                        {
-                            block : 'radio-group',
-                            mods : { theme : 'islands', size : 'm', type : 'button' },
-                            name : 'radio-sizes-m',
-                            options : [
-                                { val : 1, text : 'first' },
-                                { val : 2, text : 'second', checked : true }
+                            elem: 'container',
+                            mix: { block: 'clearfix' },
+                            content: [
+                                {
+                                    block: 'feature',
+                                    content: [
+                                        {
+                                            elem: 'heading',
+                                            content: 'Автозапуск'
+                                        },
+                                        {
+                                            block: 'image',
+                                            url: '../../i/autorun.jpg'
+                                        },
+                                        {
+                                            elem: 'description',
+                                            content: 'Вы сможете настроить Мэджик Десктоп так, что бы он сразу загружался при включении компьютера. Ваш ребенок сможет заниматься самостоятельно, не имея доступ к вашим файлам и программам.'
+                                        }
+                                    ]
+                                },
+                                {
+                                    block: 'feature',
+                                    content: [
+                                        {
+                                            elem: 'heading',
+                                            content: 'Расписание'
+                                        },
+                                        {
+                                            block: 'image',
+                                            url: '../../i/schedule.jpg'
+                                        },
+                                        {
+                                            elem: 'description',
+                                            content: 'Вы сможете установить расписание, когда и сколько ребенок может использовать как компьютер целиком, так и отдельные программы. Ребенок не будет просиживать все время за компьютером, когда Вас нет дома.'
+                                        }
+                                    ]
+                                },
+                                {
+                                    block: 'feature',
+                                    content: [
+                                        {
+                                            elem: 'heading',
+                                            content: 'Любимые приложения'
+                                        },
+                                        {
+                                            block: 'image',
+                                            url: '../../i/favorite.jpg'
+                                        },
+                                        {
+                                            elem: 'description',
+                                            content: 'Вы можете разрешить использование программ установленных Вами в Windows, добавляя их в меню Мэджик Десктоп. Например: Skype, любимые игры ребенка и т.п. А так же Вы можете разрешать доступ видео файлам, мультикам и фильмам. Все будет под Вашим родительским контролем.'
+                                        }
+                                    ]
+                                },
+                                {
+                                    block: 'feature',
+                                    content: [
+                                        {
+                                            elem: 'heading',
+                                            content: 'Делу — время, потехе — час'
+                                        },
+                                        {
+                                            block: 'image',
+                                            url: '../../i/time.jpg'
+                                        },
+                                        {
+                                            elem: 'description',
+                                            content: 'Что бы играть в развлекательные игры ребенку нужно платить монетки, которые он будет получать за занятия в обучающих программах. Также Вы можете начислять ему монетки за выполнение домашних дел. Вы сами можете установить сколько ребенок будет получат монет за использование обучающих программ и цену за использование развлекательных приложений.Это поможет воспитать у ребенка отношение к деньгам. Ребенок поймет - что за удовольствие нужно платить, а деньги нужно зарабатывать трудом.'
+                                        }
+                                    ]
+                                }
                             ]
-                        },
-                        ' ',
-                        {
-                            block : 'radio',
-                            mods : { theme : 'islands', size : 'm', checked : true },
-                            val : 1,
-                            text : 'radio'
-                        },
-                        ' ',
-                        {
-                            block : 'checkbox',
-                            mods : { theme : 'islands', size : 'm', checked : true },
-                            val : 1,
-                            text : 'check'
-                        },
-                        ' ',
-                        {
-                            block : 'checkbox',
-                            mods : { theme : 'islands', size : 'm', type : 'button', checked : true },
-                            val : 1,
-                            text : 'check'
-                        },
-                        ' ',
-                        {
-                            block : 'dropdown',
-                            mods : { switcher : 'button', theme : 'islands', size : 'm' },
-                            switcher : 'dropdown',
-                            popup : { block : 'popup', mods : { theme : 'islands' }, content : 'popup' }
-                        },
-                        ' ',
-                        {
-                            block : 'select',
-                            mods : { mode : 'radio-check', theme : 'islands', size : 'm' },
-                            name : 'select',
-                            text : 'first',
-                            options : [
-                                { val : 1, text : 'first', checked: true },
-                                { val : 2, text : 'second' }
-                            ]
-                        },
-                        ' ',
-                        {
-                            block : 'spin',
-                            mods : { theme : 'islands', size : 'm', visible : true }
                         }
                     ]
                 },
-
-                { tag : 'br' },
-
                 {
-                    block : 'line',
-                    mods : { size : 'l' },
-                    content : [
-                        'size l (32px height) ',
+                    block: 'section',
+                    mix: [{ block: 'users' }, { block: 'clearfix' }],
+                    content: [
                         {
-                            block : 'input',
-                            mods : { theme : 'islands', size : 'l', 'has-clear' : true },
-                            val : 'value',
-                            placeholder : 'placeholder'
+                            block: 'users',
+                            elem: 'heading',
+                            mix: { block: 'section', elem: 'heading' },
+                            content: 'Мэджик Десктоп уже в заботливых семьях:'
                         },
-                        ' ',
                         {
-                            block : 'button',
-                            mods : { theme : 'islands', size : 'l' },
-                            text : 'button'
-                        },
-                        ' ',
-                        {
-                            block : 'button',
-                            mods : { theme : 'islands', size : 'l' },
-                            text : 'button',
-                            icon : { block : 'icon', mods : { action : 'download' } }
-                        },
-                        ' ',
-                        {
-                            block : 'button',
-                            mods : { theme : 'islands', size : 'l' },
-                            icon : { block : 'spin', mods : { theme : 'islands', size : 'm', visible : true } },
-                            text : 'Loading...'
-                        },
-                        ' ',
-                        {
-                            block : 'radio-group',
-                            mods : { theme : 'islands', size : 'l', type : 'button' },
-                            name : 'radio-sizes-l',
-                            options : [
-                                { val : 1, text : 'first' },
-                                { val : 2, text : 'second', checked : true }
+                            block: 'users',
+                            elem: 'screens',
+                            content: [
+                                {
+                                    block: 'image',
+                                    url: '../../i/users.jpg'
+                                },
+                                {
+                                    block: 'image',
+                                    url: '../../i/users.jpg'
+                                },
+                                {
+                                    block: 'image',
+                                    url: '../../i/users.jpg'
+                                },
+                                {
+                                    block: 'image',
+                                    url: '../../i/users.jpg'
+                                }
                             ]
                         },
-                        ' ',
                         {
-                            block : 'radio',
-                            mods : { theme : 'islands', size : 'l', checked : true },
-                            val : 1,
-                            text : 'radio'
-                        },
-                        ' ',
-                        {
-                            block : 'checkbox',
-                            mods : { theme : 'islands', size : 'l', checked : true },
-                            val : 1,
-                            text : 'check'
-                        },
-                        ' ',
-                        {
-                            block : 'checkbox',
-                            mods : { theme : 'islands', size : 'l', type : 'button' },
-                            val : 1,
-                            text : 'check'
-                        },
-                        ' ',
-                        {
-                            block : 'dropdown',
-                            mods : { switcher : 'button', theme : 'islands', size : 'l' },
-                            switcher : 'dropdown',
-                            popup : { block : 'popup', mods : { theme : 'islands' }, content : 'popup' }
-                        },
-                        ' ',
-                        {
-                            block : 'select',
-                            mods : { mode : 'radio-check', theme : 'islands', size : 'l' },
-                            name : 'select',
-                            text : 'first',
-                            options : [
-                                { val : 1, text : 'first', checked: true },
-                                { val : 2, text : 'second' }
-                            ]
-                        },
-                        ' ',
-                        {
-                            block : 'spin',
-                            mods : { theme : 'islands', size : 'l', visible : true }
+                            block: 'users',
+                            elem: 'description',
+                            content: '80.000.000 семей по всему миру и 1.500.000 семей в России уже используют Мэджик Десктоп для развития своих детей.'
                         }
                     ]
                 },
-
-                { tag : 'br' },
-
                 {
-                    block : 'line',
-                    mods : { size : 'xl' },
-                    content : [
-                        'size xl (38px height) ',
+                    block: 'section',
+                    mix: { block: 'download' },
+                    content: [
                         {
-                            block : 'input',
-                            mods : { theme : 'islands', size : 'xl', 'has-clear' : true },
-                            val : 'value',
-                            placeholder : 'placeholder'
+                            block: 'download',
+                            elem: 'why',
+                            content: 'Дайте Вашему ребенку возможность идти в ногу со временем, развиваться быстрее сверстников и добиваться большего в жизни!'
                         },
-                        ' ',
                         {
-                            block : 'button',
-                            mods : { theme : 'islands', size : 'xl' },
-                            text : 'button'
+                            block: 'download',
+                            elem: 'how',
+                            content: 'Используйте Мэджик Десктоп!'
                         },
-                        ' ',
                         {
-                            block : 'button',
-                            mods : { theme : 'islands', size : 'xl' },
-                            text : 'button',
-                            icon : { block : 'icon', mods : { action : 'download' } }
-                        },
-                        ' ',
-                        {
-                            block : 'button',
-                            mods : { theme : 'islands', size : 'xl' },
-                            icon : { block : 'spin', mods : { theme : 'islands', size : 'l', visible : true } },
-                            text : 'Loading...'
-                        },
-                        ' ',
-                        {
-                            block : 'radio-group',
-                            mods : { theme : 'islands', size : 'xl', type : 'button' },
-                            name : 'radio-sizes-xl',
-                            options : [
-                                { val : 1, text : 'first' },
-                                { val : 2, text : 'second', checked : true }
-                            ]
-                        },
-                        ' ',
-                        {
-                            block : 'checkbox',
-                            mods : { theme : 'islands', size : 'xl', type : 'button' },
-                            val : 1,
-                            text : 'check'
-                        },
-                        ' ',
-                        {
-                            block : 'dropdown',
-                            mods : { switcher : 'button', theme : 'islands', size : 'xl' },
-                            switcher : 'dropdown',
-                            popup : { block : 'popup', mods : { theme : 'islands' }, content : 'popup' }
-                        },
-                        ' ',
-                        {
-                            block : 'select',
-                            mods : { mode : 'radio-check', theme : 'islands', size : 'xl' },
-                            name : 'select',
-                            text : 'first',
-                            options : [
-                                { val : 1, text : 'first', checked: true },
-                                { val : 2, text : 'second' }
-                            ]
-                        },
-                        ' ',
-                        {
-                            block : 'spin',
-                            mods : { theme : 'islands', size : 'xl', visible : true }
+                            block: 'button',
+                            text: 'Нажмите сюда для установки Мэджик Десктоп'
                         }
                     ]
                 }
             ]
         },
         {
-            block : 'footer',
-            content : [
-                'footer content goes here'
+            block: 'section',
+            mix: { block: 'footer' },
+            content: [
+                'Magic Desktop © all rights reserved 2015'
             ]
         }
     ]

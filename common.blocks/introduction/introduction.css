@@ -1,0 +1,21 @@
+.introduction {
+    background: #16b1d4 url(introduction.jpg);
+}
+
+.introduction .section__inner {
+    padding-top: 16px;
+    background: url(introduction__pointer.png) no-repeat 694px 68px;
+}
+
+.introduction__slogan {
+    font-size: 26px;
+    line-height: 30px;
+    margin-bottom: 16px;
+    padding: 30px 142px 30px 48px;
+    color: #532100;
+    background: url(introduction__slogan.png) no-repeat;
+}
+
+.introduction__em {
+    color: #930;
+}

@@ -1,0 +1,11 @@
+.description {
+    background: #9addec;
+}
+
+.description__main {
+    font-size: 22px;
+}
+
+.description__text {
+    width: 552px;
+}

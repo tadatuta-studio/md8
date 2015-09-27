@@ -1,0 +1,19 @@
+.feature {
+    float: left;
+
+    width: 430px;
+    margin-bottom: 54px;
+}
+
+.feature:nth-child(even) {
+    float: right;
+}
+
+.feature__heading {
+    font-size: 28px;
+    margin-bottom: 28px;
+}
+
+.feature .image {
+    margin-bottom: 36px;
+}

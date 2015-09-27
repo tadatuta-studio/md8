@@ -1,0 +1,20 @@
+.users {
+    background: #90c72a;
+}
+
+.users__heading {
+    color: #2a4500;
+}
+
+.users__screens {
+    width: 604px;
+    float: right;
+}
+
+.users__screens .image {
+    margin: 0 0 18px 18px;
+}
+
+.users__description {
+    color: #fff;
+}

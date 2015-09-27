@@ -1,0 +1,23 @@
+.social {
+    margin-top: 10px;
+    margin-right: 32px;
+}
+
+.social__item {
+    width: 30px;
+    height: 30px;
+    margin-left: 17px;
+    display: inline-block;
+}
+
+.social__item_network_fb {
+    background: url(social__item_network_fb.png);
+}
+
+.social__item_network_vk {
+    background: url(social__item_network_vk.png);
+}
+
+.social__item_network_ok {
+    background: url(social__item_network_ok.png);
+}
