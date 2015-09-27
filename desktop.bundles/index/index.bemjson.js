@@ -170,6 +170,7 @@ module.exports = {
                                     content: [
                                         {
                                             elem: 'pane',
+                                            elemMods: { state: 'current' },
                                             content: [
                                                 {
                                                     block: 'list',
@@ -198,6 +199,14 @@ module.exports = {
                                                     })
                                                 }
                                             ]
+                                        },
+                                        {
+                                            elem: 'pane',
+                                            content: 'К 7-8 годам случится всякое'
+                                        },
+                                        {
+                                            elem: 'pane',
+                                            content: 'К 11-12 спать пора'
                                         }
                                     ]
                                 }
