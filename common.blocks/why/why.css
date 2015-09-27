@@ -1,0 +1,14 @@
+.why {
+    padding: 25px 0;
+
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+    color: #512c00;
+
+    background: #feeb81;
+}
+
+.why .section__inner {
+    width: 600px;
+}

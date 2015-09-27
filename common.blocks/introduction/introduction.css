@@ -3,7 +3,10 @@
 }
 
 .introduction .section__inner {
+    position: relative;
+
     padding-top: 16px;
+    padding-bottom: 60px;
     background: url(introduction__pointer.png) no-repeat 694px 68px;
 }
 
@@ -18,4 +21,11 @@
 
 .introduction__em {
     color: #930;
+}
+
+.introduction__download {
+    position: absolute;
+
+    top: 460px;
+    right: 10px;
 }

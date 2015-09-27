@@ -1,9 +1,6 @@
 .users {
+    padding: 60px 0;
     background: #90c72a;
-}
-
-.users__heading {
-    color: #2a4500;
 }
 
 .users__screens {

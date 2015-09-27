@@ -1,5 +1,6 @@
 .description {
-    background: #9addec;
+    padding: 34px 0 46px;
+    background: #9addec url(description.jpg);
 }
 
 .description__main {

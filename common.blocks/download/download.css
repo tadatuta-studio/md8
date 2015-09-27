@@ -1,3 +1,10 @@
 .download {
+    text-align: center;
     background: #16b1d4;
+}
+
+.download__how {
+    padding: 10px 0 12px;
+
+    font-size: 28px;
 }

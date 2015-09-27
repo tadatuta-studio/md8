@@ -1,0 +1,15 @@
+.button_theme_md {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 32px;
+    padding: 12px 35px;
+    color: #2a4500;
+    text-decoration: none;
+    border: 2px solid #117c95;
+    cursor: pointer;
+    background: #93db0c;
+}
+
+.button_view_round {
+    border-radius: 30px;
+}

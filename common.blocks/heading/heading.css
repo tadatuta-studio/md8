@@ -1,0 +1,22 @@
+.heading__inner {
+    box-sizing: border-box;
+    width: 1000px;
+    margin: auto;
+
+    font-size: 28px;
+    line-height: 80px;
+}
+
+.heading_type_possibilities {
+    color: #2b4501;
+    background: #d8f4aa url(heading_type_possibilities.png);
+}
+
+.heading_type_features {
+    background: #ffeb6d;
+}
+
+.heading_type_users {
+    color: #2a4500;
+    background: #b6eb54 url(heading_type_users.png); /*TODO hex*/
+}

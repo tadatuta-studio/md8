@@ -15,15 +15,28 @@ module.exports = {
             content: [
                 {
                     block: 'social',
-                    content: ['fb', 'vk', 'ok'].map(function(network) {
+                    content: [
+                        {
+                            name: 'fb',
+                            url: '//www.facebook.com/magicdesktop'
+                        },
+                        {
+                            name: 'vk',
+                            url: '#vk'
+                        },
+                        {
+                            name: 'ok',
+                            url: '#ok'
+                        }
+                    ].map(function(network) {
                         return {
                             block: 'link',
-                            url: '#' + network,
+                            url: network.url,
                             mix: {
                                 block: 'social',
                                 elem: 'item',
                                 elemMods: {
-                                    network: network
+                                    network: network.name
                                 }
                             }
                         };
@@ -56,6 +69,9 @@ module.exports = {
                         },
                         {
                             block: 'button',
+                            mix: { block: 'introduction', elem: 'download' },
+                            mods: { type: 'link', theme: 'md', view: 'round' },
+                            url: 'http://www.magicdesktop.com/ru-RU/Download',
                             text: 'Скачать программу'
                         }
                     ]
@@ -135,15 +151,14 @@ module.exports = {
                     ]
                 },
                 {
+                    block: 'heading',
+                    mods: { type: 'possibilities' },
+                    content: 'Занимаясь в Мэджик Десктоп Ваш ребенок будет уметь:'
+                },
+                {
                     block: 'section',
                     mix: { block: 'possibilities' },
                     content: [
-                        {
-                            block: 'possibilities',
-                            elem: 'heading',
-                            mix: { block: 'section', elem: 'heading' },
-                            content: 'Занимаясь в Мэджик Десктоп Ваш ребенок будет уметь:'
-                        },
                         {
                             block: 'tabbed-pane',
                             content: [
@@ -215,15 +230,14 @@ module.exports = {
                     ]
                 },
                 {
+                    block: 'heading',
+                    mods: { type: 'features' },
+                    content: 'Супер способности Мэджик Десктоп:'
+                },
+                {
                     block: 'section',
                     mix: { block: 'features' },
                     content: [
-                        {
-                            block: 'features',
-                            elem: 'heading',
-                            mix: { block: 'section', elem: 'heading' },
-                            content: 'Супер способности Мэджик Десктоп:'
-                        },
                         {
                             elem: 'container',
                             mix: { block: 'clearfix' },
@@ -301,15 +315,14 @@ module.exports = {
                     ]
                 },
                 {
+                    block: 'heading',
+                    mods: { type: 'users' },
+                    content: 'Мэджик Десктоп уже в заботливых семьях:'
+                },
+                {
                     block: 'section',
                     mix: [{ block: 'users' }, { block: 'clearfix' }],
                     content: [
-                        {
-                            block: 'users',
-                            elem: 'heading',
-                            mix: { block: 'section', elem: 'heading' },
-                            content: 'Мэджик Десктоп уже в заботливых семьях:'
-                        },
                         {
                             block: 'users',
                             elem: 'screens',
@@ -341,13 +354,13 @@ module.exports = {
                 },
                 {
                     block: 'section',
+                    mix: { block: 'why' },
+                    content: 'Дайте Вашему ребенку возможность идти в ногу со временем, развиваться быстрее сверстников и добиваться большего в жизни!'
+                },
+                {
+                    block: 'section',
                     mix: { block: 'download' },
                     content: [
-                        {
-                            block: 'download',
-                            elem: 'why',
-                            content: 'Дайте Вашему ребенку возможность идти в ногу со временем, развиваться быстрее сверстников и добиваться большего в жизни!'
-                        },
                         {
                             block: 'download',
                             elem: 'how',
@@ -355,7 +368,9 @@ module.exports = {
                         },
                         {
                             block: 'button',
-                            text: 'Нажмите сюда для установки Мэджик Десктоп'
+                            mods: { type: 'link', theme: 'md' },
+                            url: 'http://www.magicdesktop.com/ru-RU/Download',
+                            text: 'Нажмите сюда<br>для установки<br>Мэджик Десктоп'
                         }
                     ]
                 }
