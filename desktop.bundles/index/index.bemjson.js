@@ -152,6 +152,7 @@ module.exports = {
                                     content: [
                                         {
                                             elem: 'tab',
+                                            elemMods: { state: 'current' },
                                             content: 'К 4 годам'
                                         },
                                         {
