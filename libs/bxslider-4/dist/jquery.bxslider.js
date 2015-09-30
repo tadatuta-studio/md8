@@ -317,7 +317,7 @@
       // if "vertical" mode, always use adaptiveHeight to prevent odd behavior
       if (slider.settings.mode === 'vertical') { slider.settings.adaptiveHeight = true; }
       // set the viewport height
-      slider.viewport.height(getViewportHeight());
+      // slider.viewport.height(getViewportHeight());
       // make sure everything is positioned just right (same as a window resize)
       el.redrawSlider();
       // onSliderLoad callback
@@ -1542,7 +1542,7 @@
       // resize all children in ratio to new screen size
       slider.children.add(el.find('.bx-clone')).outerWidth(getSlideWidth());
       // adjust the height
-      slider.viewport.css('height', getViewportHeight());
+      // slider.viewport.css('height', getViewportHeight());
       // update the slide position
       if (!slider.settings.ticker) { setSlidePosition(); }
       // if active.last was true before the screen resize, we want

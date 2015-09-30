@@ -5,8 +5,22 @@
 
 .description__main {
     font-size: 22px;
+    line-height: 26px;
 }
 
 .description__text {
     width: 552px;
+    line-height: 22px;
+}
+
+.description .carousel {
+    height: 700px;
+}
+
+.description .carousel:before {
+    background: linear-gradient(to bottom, #9addec 0%, transparent 100%);
+}
+
+.description .carousel:after {
+    background: linear-gradient(to bottom, transparent 0%, #9addec 100%);
 }

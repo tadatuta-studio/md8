@@ -13,5 +13,14 @@
 }
 
 .users__description {
+    font-size: 30px;
+    line-height: 36px;
+    width: 315px;
+    text-align: center;
     color: #fff;
+}
+
+.users__description big {
+    font-size: 40px;
+    line-height: 56px;
 }

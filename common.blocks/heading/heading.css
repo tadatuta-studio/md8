@@ -5,6 +5,7 @@
 
     font-size: 28px;
     line-height: 80px;
+    text-align: center;
 }
 
 .heading_type_possibilities {
@@ -13,10 +14,10 @@
 }
 
 .heading_type_features {
-    background: #ffeb6d;
+    background: #ffeb6d url(heading_type_features.png);
 }
 
 .heading_type_users {
     color: #2a4500;
-    background: #b6eb54 url(heading_type_users.png); /*TODO hex*/
+    background: #b6eb54 url(heading_type_users.png);
 }

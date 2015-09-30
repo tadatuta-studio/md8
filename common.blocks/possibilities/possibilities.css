@@ -6,3 +6,16 @@
 .possibilities__heading {
     color: #2b4501;
 }
+
+.possibilities .carousel {
+    z-index: 3;
+    height: 452px;
+}
+
+.possibilities .carousel:before {
+    background: linear-gradient(to bottom, #b2de5f 0%, transparent 100%);
+}
+
+.possibilities .carousel:after {
+    background: linear-gradient(to bottom, transparent 0%, #b2de5f 100%);
+}

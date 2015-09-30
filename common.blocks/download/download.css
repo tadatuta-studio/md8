@@ -7,4 +7,11 @@
     padding: 10px 0 12px;
 
     font-size: 28px;
+    line-height: 134px;
+
+    background: url(download__how.png) no-repeat 50%;
+}
+
+.download .button {
+    width: 276px;
 }

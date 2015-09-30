@@ -1,12 +1,12 @@
 .why {
-    padding: 25px 0;
+    padding: 18px 0;
 
     font-size: 28px;
     line-height: 35px;
     text-align: center;
     color: #512c00;
 
-    background: #feeb81;
+    background: #feeb81 url(why.png) no-repeat 50%;
 }
 
 .why .section__inner {

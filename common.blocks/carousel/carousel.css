@@ -1,12 +1,38 @@
 @import ../../libs/bxslider-4/dist/jquery.bxslider.css;
 
-.carousel {
-    float: right;
-    width: 300px;
-}
-
 .bx-wrapper {
     background: none;
     border: none;
     box-shadow: none;
+}
+
+.carousel {
+    position: relative;
+
+    float: right;
+    width: 260px;
+    overflow: hidden;
+    list-style: none;
+}
+
+.carousel:before,
+.carousel:after {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    height: 140px;
+    content: "";
+}
+
+.carousel:before {
+    top: 0;
+}
+
+.carousel:after {
+    bottom: 0;
+}
+
+.carousel__item {
+    margin-bottom: 8px;
 }

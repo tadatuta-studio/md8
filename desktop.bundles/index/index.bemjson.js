@@ -3,9 +3,48 @@ module.exports = {
     title: 'Мэджик Десктоп — программа для умственного развития детей',
     favicon: '/favicon.ico',
     head: [
-        { elem: 'meta', attrs: { name: 'description', content: '' } },
+        { elem: 'meta', attrs: { name: 'description', content: 'Magic Desktop 9.1 - полноценная компьютерная система для детей!' } },
         { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width, initial-scale=1' } },
-        { elem: 'css', url: 'index.min.css' }
+        { elem: 'css', url: 'index.min.css' },
+        [
+            {
+                property: 'og:title',
+                content: 'Magic Desktop 9.1 – полноценная компьютерная система для детей!'
+            },
+            {
+                property: 'og:site_name',
+                content: 'Magic Desktop'
+            },
+            {
+                property: 'og:url',
+                content: 'http://www.magicdesktop.com/ru-RU'
+            },
+            {
+                property: 'og:image',
+                content: 'http://www.magicdesktop.com/i/social_img.jpg'
+            },
+            {
+                property: 'og:description',
+                content: 'Вдохновляет детей учиться, обеспечивает их онлайн-безопасность и защищает ваш компьютер от повреждений.'
+            },
+            {
+                property: 'og:type',
+                content: 'website'
+            },
+            {
+                property: 'og:locale',
+                content: 'ru_RU'
+            },
+            {
+                property: 'fb:app_id',
+                content: '567143303315365'
+            }
+        ].map(function(meta) {
+            return {
+                elem: 'meta',
+                attrs: { property: meta.property, content: meta.content }
+            };
+        })
     ],
     scripts: [{ elem: 'js', url: 'index.min.js' }],
     content: [
@@ -65,7 +104,8 @@ module.exports = {
                             ]
                         },
                         {
-                            block: 'video'
+                            block: 'video',
+                            url: 'https://www.youtube.com/embed/1ZpTwSULBh0'
                         },
                         {
                             block: 'button',
@@ -84,25 +124,27 @@ module.exports = {
                             block: 'carousel',
                             js: { opts: {
                                 mode: 'vertical',
-                                // ticker: true,
+                                ticker: true,
                                 tickerHover: true,
-                                speed: 5000,
+                                speed: 10000,
                                 responsive: false
                             } },
                             content: [
-                                {
+                                'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
+                                'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
+                                'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
+                                'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
+                                'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
+                                'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                            ].map(function(url) {
+                                return {
                                     elem: 'item',
-                                    content: 'IMG1'
-                                },
-                                {
-                                    elem: 'item',
-                                    content: 'IMG2'
-                                },
-                                {
-                                    elem: 'item',
-                                    content: 'IMG3'
-                                }
-                            ]
+                                    content: {
+                                        block: 'image',
+                                        url: url
+                                    }
+                                };
+                            })
                         },
                         {
                             block: 'description',
@@ -111,7 +153,18 @@ module.exports = {
                                 {
                                     block: 'description',
                                     elem: 'main',
-                                    content: 'Мэджик Десктоп — это компьютерная программа, которая сама обучает Вашего ребенка с помощью интерактивных игр.'
+                                    content: [
+                                        {
+                                            tag: 'strong',
+                                            content: 'Мэджик Десктоп'
+                                        },
+                                        ' — это компьютерная программа, которая сама ',
+                                        {
+                                            tag: 'strong',
+                                            content: 'обучает Вашего ребенка'
+                                        },
+                                        ' с помощью интерактивных игр.'
+                                    ]
                                 },
                                 {
                                     tag: 'p',
@@ -120,17 +173,17 @@ module.exports = {
                                 {
                                     block: 'list',
                                     content: [
-                                        'Внимание и восприятие окружающего мира',
-                                        'Способность к анализу, определению свойств и характеристик предметов: цвета, размеры, вес, геометрическая форма,   назначение предметов.',
-                                        'Память. Сможет запоминать и воспроизводить по порядку до 11 предметов.',
-                                        'Развивает логическое мышление.',
-                                        'Счет и математические способности.',
-                                        'Обучается чтению.',
-                                        'Развивает способность к систематизации: группировке предметов по их свойствам и назначению.',
-                                        'Абстрактное мышление. Выявление закономерностей. Способность к предположениям.',
-                                        'Слух. Восприятие нот, тона и различных музыкальных инструментов.',
-                                        'Творческие способности. Способность создавать что-то новое.',
-                                        'Воображение. Способность оперировать образами и понятиями в уме.'
+                                        [{ tag: 'strong', content: 'Внимание' }, ' и восприятие окружающего мира'],
+                                        [{ tag: 'strong', content: 'Способность к анализу' }, ' определению свойств и характеристик предметов: цвета, размеры, вес, геометрическая форма,   назначение предметов.'],
+                                        [{ tag: 'strong', content: 'Память' }, '. Сможет запоминать и воспроизводить по порядку до 11 предметов.'],
+                                        ['Развивает ', { tag: 'strong', content: 'логическое мышление' }, '.'],
+                                        [{ tag: 'strong', content: 'Счет' }, ' и математические способности.'],
+                                        { tag: 'strong', content: 'Обучается чтению.' },
+                                        ['Развивает ', { tag: 'strong', content: 'способность к систематизации' }, ': группировке предметов по их свойствам и назначению.'],
+                                        [{ tag: 'strong', content: 'Абстрактное мышление' }, '. Выявление закономерностей. Способность к предположениям.'],
+                                        [{ tag: 'strong', content: 'Слух' }, '. Восприятие нот, тона и различных музыкальных инструментов.'],
+                                        [{ tag: 'strong', content: 'Творческие способности' }, '. Способность создавать что-то новое.'],
+                                        [{ tag: 'strong', content: 'Воображение' }, '. Способность оперировать образами и понятиями в уме.']
                                     ].map(function(item) {
                                         return {
                                             elem: 'item',
@@ -140,7 +193,19 @@ module.exports = {
                                 },
                                 {
                                     tag: 'p',
-                                    content: 'Так же, с помощью обучающих приложений и познавательного видео Ваш ребенок узнает много интересного об окружающем мире, науках, профессиях, жизненных навыках и многом другом.'
+                                    content: [
+                                        'Так же, с помощью обучающих приложений и познавательного видео ',
+                                        {
+                                            tag: 'strong',
+                                            content: 'Ваш ребенок узнает'
+                                        },
+                                        ' много интересного ',
+                                        {
+                                            tag: 'strong',
+                                            content: 'об окружающем мире'
+                                        },
+                                        ', науках, профессиях, жизненных навыках и многом другом.'
+                                    ]
                                 },
                                 {
                                     tag: 'p',
@@ -188,6 +253,32 @@ module.exports = {
                                             elemMods: { state: 'current' },
                                             content: [
                                                 {
+                                                    block: 'carousel',
+                                                    js: { opts: {
+                                                        mode: 'vertical',
+                                                        ticker: true,
+                                                        tickerHover: true,
+                                                        speed: 10000,
+                                                        responsive: false
+                                                    } },
+                                                    content: [
+                                                        'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
+                                                        'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
+                                                        'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
+                                                        'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
+                                                        'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
+                                                        'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                                    ].map(function(url) {
+                                                        return {
+                                                            elem: 'item',
+                                                            content: {
+                                                                block: 'image',
+                                                                url: url
+                                                            }
+                                                        };
+                                                    })
+                                                },
+                                                {
                                                     block: 'list',
                                                     content: [
                                                         'Самостоятельно пользоваться компьютером: включать, выключать, и спользовать мышь и клавиатуру',
@@ -212,6 +303,12 @@ module.exports = {
                                                             content: item
                                                         };
                                                     })
+                                                },
+                                                'Попробуйте Мэджик Декстоп прямо сейчас ',
+                                                {
+                                                    block: 'link',
+                                                    url: 'http://www.magicdesktop.com/ru-RU/Download',
+                                                    content: 'скачать программу'
                                                 }
                                             ]
                                         },
@@ -348,7 +445,17 @@ module.exports = {
                         {
                             block: 'users',
                             elem: 'description',
-                            content: '80.000.000 семей по всему миру и 1.500.000 семей в России уже используют Мэджик Десктоп для развития своих детей.'
+                            content: [
+                                '<big>80.000.000</big>',
+                                'семей по всему миру',
+                                ['и ', '<big>1.500.000</big>', ' семей'],
+                                '<big>в России</big>',
+                                'уже используют',
+                                '<big>Мэджик Десктоп</big>',
+                                'для развития своих детей.'
+                            ].map(function(line) {
+                                return [line, { tag: 'br' }];
+                            })
                         }
                     ]
                 },

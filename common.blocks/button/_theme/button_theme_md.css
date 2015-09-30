@@ -8,6 +8,11 @@
     border: 2px solid #117c95;
     cursor: pointer;
     background: #93db0c;
+    transition: background-color 300ms linear;
+}
+
+.button_theme_md:hover {
+    background: #aaff0d;
 }
 
 .button_view_round {

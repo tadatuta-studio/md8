@@ -21,11 +21,13 @@
 }
 
 .tabbed-pane__panes {
+    line-height: 21px;
     margin-top: -2px;
 }
 
 .tabbed-pane__pane {
     display: none;
+    padding: 34px 20px;
     border: 2px dashed #fff;
 }
 
