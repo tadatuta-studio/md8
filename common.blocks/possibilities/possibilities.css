@@ -7,6 +7,10 @@
     color: #2b4501;
 }
 
+.possibilities .list {
+    min-height: 400px;
+}
+
 .possibilities .carousel {
     z-index: 3;
     height: 452px;
