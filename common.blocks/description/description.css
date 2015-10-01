@@ -9,12 +9,17 @@
 }
 
 .description__text {
-    width: 552px;
+    width: 651px;
     line-height: 22px;
+}
+
+.description__text .list {
+    margin-bottom: 68px;
 }
 
 .description .carousel {
     height: 700px;
+    margin-right: 22px;
 }
 
 .description .carousel:before {
@@ -23,4 +28,14 @@
 
 .description .carousel:after {
     background: linear-gradient(to bottom, transparent 0%, #9addec 100%);
+}
+
+.description .bx-wrapper .bx-prev {
+    top: 10px;
+    background: url(carousel__up.png) no-repeat 50%;
+}
+
+.description .bx-wrapper .bx-next {
+    top: 654px;
+    background: url(carousel__down.png) no-repeat 50%;
 }

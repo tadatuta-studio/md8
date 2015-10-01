@@ -19,3 +19,13 @@
 .possibilities .carousel:after {
     background: linear-gradient(to bottom, transparent 0%, #b2de5f 100%);
 }
+
+.possibilities .bx-wrapper .bx-prev {
+    top: 10px;
+    background: url(carousel__up.png) no-repeat 50%;
+}
+
+.possibilities .bx-wrapper .bx-next {
+    top: 394px;
+    background: url(carousel__down.png) no-repeat 50%;
+}

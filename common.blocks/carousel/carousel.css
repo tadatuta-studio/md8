@@ -36,3 +36,15 @@
 .carousel__item {
     margin-bottom: 8px;
 }
+
+.carousel__item .link {
+    cursor: pointer;
+}
+
+.bx-wrapper.bx-wrapper .bx-prev,
+.bx-wrapper.bx-wrapper .bx-next {
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+}

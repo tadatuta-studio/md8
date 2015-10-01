@@ -124,24 +124,58 @@ module.exports = {
                             block: 'carousel',
                             js: { opts: {
                                 mode: 'vertical',
-                                ticker: true,
-                                tickerHover: true,
-                                speed: 10000,
+                                minSlides: 5,
+                                maxSlides: 5,
+                                auto: true,
+                                moveSlides: 1,
+                                pager: false,
+                                speed: 500,
                                 responsive: false
                             } },
                             content: [
-                                'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
-                                'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
-                                'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
-                                'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
-                                'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
-                                'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
-                            ].map(function(url) {
+                                {
+                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                },
+                                {
+                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                },
+                                {
+                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                },
+                                {
+                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                },
+                                {
+                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                },
+                                {
+                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                },
+                                {
+                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                },
+                                {
+                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                }
+                            ].map(function(img) {
                                 return {
                                     elem: 'item',
                                     content: {
-                                        block: 'image',
-                                        url: url
+                                        block: 'link',
+                                        js: { url: img.url },
+                                        mods: { pseudo: true },
+                                        content: {
+                                            block: 'image',
+                                            url: img.preview
+                                        }
                                     }
                                 };
                             })
@@ -168,7 +202,14 @@ module.exports = {
                                 },
                                 {
                                     tag: 'p',
-                                    content: 'Занимаясь в Мэджик Десктоп Ваш ребенок разовьёт:'
+                                    content: [
+                                        'Занимаясь в Мэджик Десктоп ',
+                                        {
+                                            tag: 'strong',
+                                            content: 'Ваш ребенок разовьёт'
+                                        },
+                                        ':'
+                                    ]
                                 },
                                 {
                                     block: 'list',
@@ -209,7 +250,24 @@ module.exports = {
                                 },
                                 {
                                     tag: 'p',
-                                    content: 'В Мэджик Десктоп ребенок сможет сам включить и посмотреть любимые мультики, такие как Фиксики, Смешарики, Маша и Медведь и еще около 1000 поучительных мультфильмов.'
+                                    content: [
+                                        'В Мэджик Десктоп ',
+                                        {
+                                            tag: 'strong',
+                                            content: 'ребенок'
+                                        },
+                                        ' сможет ',
+                                        {
+                                            tag: 'strong',
+                                            content: 'сам включить'
+                                        },
+                                        ' и посмотреть ',
+                                        {
+                                            tag: 'strong',
+                                            content: 'любимые мультики'
+                                        },
+                                        ', такие как Фиксики, Смешарики, Маша и Медведь и еще около 1000 поучительных мультфильмов.'
+                                    ]
                                 }
                             ]
                         }
@@ -256,24 +314,58 @@ module.exports = {
                                                     block: 'carousel',
                                                     js: { opts: {
                                                         mode: 'vertical',
-                                                        ticker: true,
-                                                        tickerHover: true,
-                                                        speed: 10000,
+                                                        minSlides: 3,
+                                                        maxSlides: 3,
+                                                        auto: true,
+                                                        moveSlides: 1,
+                                                        pager: false,
+                                                        speed: 500,
                                                         responsive: false
                                                     } },
                                                     content: [
-                                                        'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
-                                                        'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
-                                                        'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
-                                                        'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
-                                                        'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random(),
-                                                        'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
-                                                    ].map(function(url) {
+                                                        {
+                                                            url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                                            preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                                        },
+                                                        {
+                                                            url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                                            preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                                        },
+                                                        {
+                                                            url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                                            preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                                        },
+                                                        {
+                                                            url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                                            preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                                        },
+                                                        {
+                                                            url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                                            preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                                        },
+                                                        {
+                                                            url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                                            preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                                        },
+                                                        {
+                                                            url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                                            preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                                        },
+                                                        {
+                                                            url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
+                                                            preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
+                                                        }
+                                                    ].map(function(img) {
                                                         return {
                                                             elem: 'item',
                                                             content: {
-                                                                block: 'image',
-                                                                url: url
+                                                                block: 'link',
+                                                                js: { url: img.url },
+                                                                mods: { pseudo: true },
+                                                                content: {
+                                                                    block: 'image',
+                                                                    url: img.preview
+                                                                }
                                                             }
                                                         };
                                                     })
@@ -340,70 +432,80 @@ module.exports = {
                             mix: { block: 'clearfix' },
                             content: [
                                 {
-                                    block: 'feature',
+                                    elem: 'row',
                                     content: [
                                         {
-                                            elem: 'heading',
-                                            content: 'Автозапуск'
+                                            block: 'feature',
+                                            content: [
+                                                {
+                                                    elem: 'heading',
+                                                    content: 'Автозапуск'
+                                                },
+                                                {
+                                                    block: 'image',
+                                                    url: '../../i/autorun.jpg'
+                                                },
+                                                {
+                                                    elem: 'description',
+                                                    content: 'Вы сможете настроить Мэджик Десктоп так, что бы он сразу загружался при включении компьютера. Ваш ребенок сможет заниматься самостоятельно, не имея доступ к вашим файлам и программам.'
+                                                }
+                                            ]
                                         },
                                         {
-                                            block: 'image',
-                                            url: '../../i/autorun.jpg'
-                                        },
-                                        {
-                                            elem: 'description',
-                                            content: 'Вы сможете настроить Мэджик Десктоп так, что бы он сразу загружался при включении компьютера. Ваш ребенок сможет заниматься самостоятельно, не имея доступ к вашим файлам и программам.'
+                                            block: 'feature',
+                                            content: [
+                                                {
+                                                    elem: 'heading',
+                                                    content: 'Расписание'
+                                                },
+                                                {
+                                                    block: 'image',
+                                                    url: '../../i/schedule.jpg'
+                                                },
+                                                {
+                                                    elem: 'description',
+                                                    content: 'Вы сможете установить расписание, когда и сколько ребенок может использовать как компьютер целиком, так и отдельные программы. Ребенок не будет просиживать все время за компьютером, когда Вас нет дома.'
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
                                 {
-                                    block: 'feature',
+                                    elem: 'row',
                                     content: [
                                         {
-                                            elem: 'heading',
-                                            content: 'Расписание'
+                                            block: 'feature',
+                                            content: [
+                                                {
+                                                    elem: 'heading',
+                                                    content: 'Любимые приложения'
+                                                },
+                                                {
+                                                    block: 'image',
+                                                    url: '../../i/favorite.jpg'
+                                                },
+                                                {
+                                                    elem: 'description',
+                                                    content: 'Вы можете разрешить использование программ установленных Вами в Windows, добавляя их в меню Мэджик Десктоп. Например: Skype, любимые игры ребенка и т.п. А так же Вы можете разрешать доступ видео файлам, мультикам и фильмам. Все будет под Вашим родительским контролем.'
+                                                }
+                                            ]
                                         },
                                         {
-                                            block: 'image',
-                                            url: '../../i/schedule.jpg'
-                                        },
-                                        {
-                                            elem: 'description',
-                                            content: 'Вы сможете установить расписание, когда и сколько ребенок может использовать как компьютер целиком, так и отдельные программы. Ребенок не будет просиживать все время за компьютером, когда Вас нет дома.'
-                                        }
-                                    ]
-                                },
-                                {
-                                    block: 'feature',
-                                    content: [
-                                        {
-                                            elem: 'heading',
-                                            content: 'Любимые приложения'
-                                        },
-                                        {
-                                            block: 'image',
-                                            url: '../../i/favorite.jpg'
-                                        },
-                                        {
-                                            elem: 'description',
-                                            content: 'Вы можете разрешить использование программ установленных Вами в Windows, добавляя их в меню Мэджик Десктоп. Например: Skype, любимые игры ребенка и т.п. А так же Вы можете разрешать доступ видео файлам, мультикам и фильмам. Все будет под Вашим родительским контролем.'
-                                        }
-                                    ]
-                                },
-                                {
-                                    block: 'feature',
-                                    content: [
-                                        {
-                                            elem: 'heading',
-                                            content: 'Делу — время, потехе — час'
-                                        },
-                                        {
-                                            block: 'image',
-                                            url: '../../i/time.jpg'
-                                        },
-                                        {
-                                            elem: 'description',
-                                            content: 'Что бы играть в развлекательные игры ребенку нужно платить монетки, которые он будет получать за занятия в обучающих программах. Также Вы можете начислять ему монетки за выполнение домашних дел. Вы сами можете установить сколько ребенок будет получат монет за использование обучающих программ и цену за использование развлекательных приложений.Это поможет воспитать у ребенка отношение к деньгам. Ребенок поймет - что за удовольствие нужно платить, а деньги нужно зарабатывать трудом.'
+                                            block: 'feature',
+                                            content: [
+                                                {
+                                                    elem: 'heading',
+                                                    content: 'Делу — время, потехе — час'
+                                                },
+                                                {
+                                                    block: 'image',
+                                                    url: '../../i/time.jpg'
+                                                },
+                                                {
+                                                    elem: 'description',
+                                                    content: 'Что бы играть в развлекательные игры ребенку нужно платить монетки, которые он будет получать за занятия в обучающих программах. Также Вы можете начислять ему монетки за выполнение домашних дел. Вы сами можете установить сколько ребенок будет получат монет за использование обучающих программ и цену за использование развлекательных приложений.Это поможет воспитать у ребенка отношение к деньгам. Ребенок поймет - что за удовольствие нужно платить, а деньги нужно зарабатывать трудом.'
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -446,9 +548,9 @@ module.exports = {
                             block: 'users',
                             elem: 'description',
                             content: [
-                                '<big>80.000.000</big>',
+                                '<big><strong>80.000.000</strong></big>',
                                 'семей по всему миру',
-                                ['и ', '<big>1.500.000</big>', ' семей'],
+                                ['и ', '<big><strong>1.500.000</strong></big>', ' семей'],
                                 '<big>в России</big>',
                                 'уже используют',
                                 '<big>Мэджик Десктоп</big>',
@@ -489,6 +591,10 @@ module.exports = {
             content: [
                 'Magic Desktop © all rights reserved 2015'
             ]
+        },
+        {
+            block: 'modal',
+            mods: { autoclosable : true, theme : 'islands' }
         }
     ]
 };
