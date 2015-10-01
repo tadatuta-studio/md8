@@ -14,13 +14,16 @@ provide(BEMDOM.decl(this.name, {
     switchTab: function(currentTabIndex) {
         // TODO: проверять, не является ли currentTabIndex уже активным
         var panes = this.elem('pane'),
-            tabs = this.elem('tab');
+            tabs = this.elem('tab'),
+            currentPane = panes.eq(currentTabIndex);
 
-        return this
+        this
             .delMod(tabs, 'state')
             .setMod(tabs.eq(currentTabIndex), 'state', 'current')
             .delMod(panes, 'state')
-            .setMod(panes.eq(currentTabIndex), 'state', 'current');
+            .setMod(currentPane, 'state', 'current');
+
+        this.findBlockInside(currentPane, 'carousel'); // force init
     },
 }, {
     live: function() {

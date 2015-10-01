@@ -1,0 +1,32 @@
+.feedback {
+    float: right;
+    width: 604px;
+
+    font-size: 12px;
+}
+
+.feedback__item {
+    margin-bottom: 22px;
+}
+
+.feedback__avatar {
+    float: left;
+    margin-right: 18px;
+    border: 1px solid #fff;
+
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+.feedback__name {
+    font-size: 18px;
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+.feedback__message {
+    float: left;
+    width: 530px;
+}

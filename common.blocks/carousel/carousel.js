@@ -18,6 +18,8 @@ provide(BEMDOM.decl(this.name, {
             }
         }
     }
+}, {
+    live: function() {}
 }));
 
 });
