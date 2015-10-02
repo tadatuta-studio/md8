@@ -30,12 +30,14 @@
     background: linear-gradient(to bottom, transparent 0%, #9addec 100%);
 }
 
-.description .bx-wrapper .bx-prev {
+.description .bx-wrapper .bx-prev,
+.description .bx-wrapper .bx-prev:hover {
     top: 10px;
     background: url(carousel__up.png) no-repeat 50%;
 }
 
-.description .bx-wrapper .bx-next {
+.description .bx-wrapper .bx-next,
+.description .bx-wrapper .bx-next:hover {
     top: 654px;
     background: url(carousel__down.png) no-repeat 50%;
 }
