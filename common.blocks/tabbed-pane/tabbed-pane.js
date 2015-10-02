@@ -1,4 +1,4 @@
-modules.define('tabbed-pane', ['i-bem__dom'], function(provide, BEMDOM) {
+modules.define('tabbed-pane', ['i-bem__dom', 'jquery'], function(provide, BEMDOM, $) {
 
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
@@ -23,7 +23,8 @@ provide(BEMDOM.decl(this.name, {
             .delMod(panes, 'state')
             .setMod(currentPane, 'state', 'current');
 
-        this.findBlockInside(currentPane, 'carousel'); // force init
+        this.findBlockInside(currentPane, 'carousel') // force init
+            .reloadSlider();
     },
 }, {
     live: function() {

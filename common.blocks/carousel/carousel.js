@@ -6,7 +6,7 @@ provide(BEMDOM.decl(this.name, {
     onSetMod: {
         js: {
             inited: function() {
-                this.elem('inner').bxSlider(this.params.opts);
+                this.slider = this.elem('inner').bxSlider(this.params.opts);
 
                 var modal = this.findBlockOutside('page').findBlockInside('modal');
 
@@ -17,6 +17,9 @@ provide(BEMDOM.decl(this.name, {
                 });
             }
         }
+    },
+    reloadSlider: function() {
+        this.slider.reloadSlider();
     }
 }, {
     live: function() {}
