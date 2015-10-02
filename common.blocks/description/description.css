@@ -31,13 +31,15 @@
 }
 
 .description .bx-wrapper .bx-prev,
-.description .bx-wrapper .bx-prev:hover {
+.description .bx-wrapper .bx-prev:hover,
+.description .bx-wrapper .bx-prev:focus {
     top: 10px;
     background: url(carousel__up.png) no-repeat 50%;
 }
 
 .description .bx-wrapper .bx-next,
-.description .bx-wrapper .bx-next:hover {
+.description .bx-wrapper .bx-next:hover,
+.description .bx-wrapper .bx-next:focus {
     top: 654px;
     background: url(carousel__down.png) no-repeat 50%;
 }
