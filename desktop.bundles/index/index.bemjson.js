@@ -132,7 +132,8 @@ module.exports = {
                                     moveSlides: 1,
                                     pager: false,
                                     speed: 500,
-                                    responsive: false
+                                    responsive: false,
+                                    touchEnabled: false
                                 }
                             },
                             content: Array.apply(null, Array(16)).map(function(img, idx) {
@@ -713,7 +714,8 @@ function buildCarousel(age, imagesNumber, autoInit) {
                 moveSlides: 1,
                 pager: false,
                 speed: 500,
-                responsive: false
+                responsive: false,
+                touchEnabled: false
             }
         },
         content: Array.apply(null, Array(imagesNumber)).map(function(img, idx) {
