@@ -135,49 +135,16 @@ module.exports = {
                                     responsive: false
                                 }
                             },
-                            content: [
-                                {
-                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
-                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
-                                },
-                                {
-                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
-                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
-                                },
-                                {
-                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
-                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
-                                },
-                                {
-                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
-                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
-                                },
-                                {
-                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
-                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
-                                },
-                                {
-                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
-                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
-                                },
-                                {
-                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
-                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
-                                },
-                                {
-                                    url: 'http://lorempixel.com/800/600/abstract/?rnd=' + Math.random(),
-                                    preview: 'http://lorempixel.com/260/146/abstract/?rnd=' + Math.random()
-                                }
-                            ].map(function(img) {
+                            content: Array.apply(null, Array(16)).map(function(img, idx) {
                                 return {
                                     elem: 'item',
                                     content: {
                                         block: 'link',
-                                        js: { url: img.url },
+                                        js: { url: 'i/24/orig/' + (idx + 1) + '.jpg' },
                                         mods: { pseudo: true },
                                         content: {
                                             block: 'image',
-                                            url: img.preview
+                                            url: 'i/24/preview/' + (idx + 1) + '.jpg'
                                         }
                                     }
                                 };
@@ -659,7 +626,7 @@ module.exports = {
                                         {
                                             block: 'image',
                                             mix: { block: 'feedback', elem: 'avatar' },
-                                            url: 'i/2mjpf26B5BE.jpg'
+                                            url: 'i/VVCLnDLZfy0.jpg'
                                         },
                                         {
                                             elem: 'name',
@@ -754,11 +721,11 @@ function buildCarousel(age, imagesNumber, autoInit) {
                 elem: 'item',
                 content: {
                     block: 'link',
-                    js: { url: 'i/' + age + '/' + (idx + 1) + '.png' },
+                    js: { url: 'i/' + age + '/orig/' + (idx + 1) + '.jpg' },
                     mods: { pseudo: true },
                     content: {
                         block: 'image',
-                        url: 'i/' + age + '/' + (idx + 1) + '.png'
+                        url: 'i/' + age + '/preview/' + (idx + 1) + '.jpg'
                     }
                 }
             };
