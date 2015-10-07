@@ -5,8 +5,8 @@
 }
 
 .header .section__inner {
-    padding-left: 78px;
-    background: url(header.png) no-repeat 32px 50%;
+    padding-left: 46px;
+    background: url(header.png) no-repeat 0 50%;
 }
 
 .header .social {
