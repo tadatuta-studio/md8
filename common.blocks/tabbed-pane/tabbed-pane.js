@@ -4,12 +4,16 @@ provide(BEMDOM.decl(this.name, {
     onSetMod: {
         js: {
             inited: function() {
-
+                var tabIdx = window.location.hash.substr(1);
+                tabIdx && this.switchTab(tabIdx);
             }
         }
     },
     onTabClick: function(e) {
-        this.switchTab(this.elem('tab').index(e.target));
+        var currentTabIndex = this.elem('tab').index(e.target);
+        yaCounter32863075.reachGoal('DL_Middle-' + (currentTabIndex + 1));
+
+        this.switchTab(currentTabIndex);
     },
     switchTab: function(currentTabIndex) {
         // TODO: проверять, не является ли currentTabIndex уже активным
@@ -29,6 +33,7 @@ provide(BEMDOM.decl(this.name, {
 }, {
     live: function() {
         this.liveBindTo('tab', 'click', this.prototype.onTabClick);
+        return false;
     }
 }));
 

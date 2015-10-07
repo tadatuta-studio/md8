@@ -89,7 +89,7 @@ module.exports = {
             content: [
                 {
                     block: 'section',
-                    mix: { block: 'introduction' },
+                    mix: { block: 'introduction', js: true },
                     content: [
                         {
                             block: 'introduction',
@@ -253,6 +253,12 @@ module.exports = {
                     block: 'section',
                     mix: { block: 'possibilities' },
                     content: [
+                        [0, 1, 2].map(function(i) {
+                            return {
+                                tag: 'a',
+                                attrs: { id: i }
+                            };
+                        }),
                         {
                             block: 'tabbed-pane',
                             content: [
@@ -670,7 +676,7 @@ module.exports = {
                 },
                 {
                     block: 'section',
-                    mix: { block: 'download' },
+                    mix: { block: 'download', js: true },
                     content: [
                         {
                             block: 'download',
@@ -679,6 +685,7 @@ module.exports = {
                         },
                         {
                             block: 'button',
+                            mix: { block: 'download', elem: 'button' },
                             mods: { type: 'link', theme: 'md' },
                             url: 'http://www.magicdesktop.com/ru-RU/Download',
                             text: 'Нажмите сюда<br>для установки<br>Мэджик Десктоп'
