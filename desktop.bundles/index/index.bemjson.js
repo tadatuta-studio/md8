@@ -697,6 +697,9 @@ module.exports = {
         {
             block: 'modal',
             mods: { autoclosable : true, theme : 'islands' }
+        },
+        {
+            block: 'metrika'
         }
     ]
 };
