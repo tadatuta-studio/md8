@@ -5,7 +5,7 @@ module.exports = {
     head: [
         { elem: 'meta', attrs: { name: 'description', content: 'Magic Desktop 9.1 - полноценная компьютерная система для детей!' } },
         { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width, initial-scale=1' } },
-        { elem: 'css', url: 'index.min.css' },
+        { elem: 'css', url: 'content/styles.min.css' },
         [
             {
                 property: 'og:title',
@@ -46,7 +46,7 @@ module.exports = {
             };
         })
     ],
-    scripts: [{ elem: 'js', url: 'index.min.js' }],
+    scripts: [{ elem: 'js', url: 'scripts/scripts.min.js' }],
     content: [
         {
             block: 'section',
