@@ -7,7 +7,7 @@
 
     padding-top: 16px;
     padding-bottom: 60px;
-    background: url(introduction__pointer.png) no-repeat 694px 68px;
+    background: url(introduction__pointer.png) no-repeat 683px 68px;
 }
 
 .introduction__slogan {
@@ -28,5 +28,5 @@
     position: absolute;
 
     top: 460px;
-    right: 24px;
+    right: 35px;
 }

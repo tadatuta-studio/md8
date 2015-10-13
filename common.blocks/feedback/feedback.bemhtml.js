@@ -1,1 +1,4 @@
-block('feedback').elem('item').mix()({ block: 'clearfix' });
+block('feedback')(
+    js()(true),
+    elem('item').mix()({ block: 'clearfix' })
+);

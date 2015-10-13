@@ -23,11 +23,11 @@
 }
 
 .description .carousel:before {
-    background: linear-gradient(to bottom, #9addec 0%, transparent 100%);
+    background: linear-gradient(to bottom, #9addec 10%, transparent 100%);
 }
 
 .description .carousel:after {
-    background: linear-gradient(to bottom, transparent 0%, #9addec 100%);
+    background: linear-gradient(to bottom, transparent 0%, #9addec 90%);
 }
 
 .description .bx-wrapper .bx-prev,

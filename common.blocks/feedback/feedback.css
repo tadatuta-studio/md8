@@ -5,6 +5,22 @@
     font-size: 12px;
 }
 
+.feedback__items {
+    position: relative;
+    height: 435px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.feedback__items:after {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, #90c72b 90%);
+    content: "";
+}
+
 .feedback__item {
     margin-bottom: 22px;
 }
@@ -29,4 +45,25 @@
 .feedback__message {
     float: left;
     width: 530px;
+}
+
+.feedback__more {
+    width: 117px;
+    height: 39px;
+    margin: auto;
+    cursor: pointer;
+    background: url('feedback.png');
+}
+
+.feedback_expanded .feedback__items {
+    height: auto;
+    margin-bottom: 0;
+}
+
+.feedback_expanded .feedback__more {
+    display: none;
+}
+
+.feedback_expanded .feedback__items:after {
+    display: none;
 }

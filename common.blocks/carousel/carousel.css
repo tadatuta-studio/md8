@@ -4,6 +4,7 @@
     background: none;
     border: none;
     box-shadow: none;
+    margin: 0;
 }
 
 .carousel {
@@ -11,6 +12,7 @@
 
     float: right;
     width: 260px;
+    padding-left: 40px;
     overflow: hidden;
     list-style: none;
 }
@@ -45,6 +47,6 @@
 .bx-wrapper.bx-wrapper .bx-next {
     left: 0;
     right: 0;
-    width: 100%;
+    width: 240px; /* width of resized image in slider */
     margin: 0;
 }
